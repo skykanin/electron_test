@@ -1,0 +1,24 @@
+{
+  "name": "frontend_test",
+  "version": "1.0.0",
+  "description": "Testing frontend with webpack",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "author": "Skykanin",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "devDependencies": {
+    "babel-preset-es2018": "^1.0.0",
+    "babel-preset-react": "^6.24.1",
+    "electron-prebuilt-compile": "^1.7.11",
+    "electron-react-devtools": "^0.5.3",
+    "typescript": "^2.6.2",
+    "webpack": "^3.10.0"
+  }
+}
