@@ -8,9 +8,8 @@ app.on('window-all-closed', () => {
 
 app.on('ready', () => {
   mainWindow = new BrowserWindow({
-    width: 700,
-    height: 760,
-    titleBarStyle: 'hidden',
+    width: 1000,
+    height: 700,
     frame: true
   });
 
