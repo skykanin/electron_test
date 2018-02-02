@@ -16,8 +16,8 @@
   "devDependencies": {
     "babel-preset-es2018": "^1.0.0",
     "babel-preset-react": "^6.24.1",
+    "electron-devtools-installer": "^2.2.3",
     "electron-prebuilt-compile": "^1.7.11",
-    "electron-react-devtools": "^0.5.3",
     "typescript": "^2.6.2",
     "webpack": "^3.10.0"
   }
