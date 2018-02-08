@@ -1,16 +1,22 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { MuiThemeProvider } from 'material-ui'
+import { FlatButton, Toolbar } from 'material-ui'
 
 export class Header extends React.Component {
     render() {
-        const navBarElements = ['Home', 'News', 'Contact', 'About'];
+        const ToolbarButtons = () => (
+            <span>
+                <FlatButton label='Home'/>
+                <FlatButton label='News'/>
+                <FlatButton label='Contact'/>
+                <FlatButton label='About'/>
+            </span>
+        );
+
         return (
-            <ul className='header'>
-                <li><a>{navBarElements[0]}</a></li>
-                <li><a>{navBarElements[1]}</a></li>
-                <li><a>{navBarElements[2]}</a></li>
-                <li><a>{navBarElements[3]}</a></li>
-            </ul>
+            <MuiThemeProvider>
+                <Toolbar children={<ToolbarButtons />} noGutter={false}/>
+            </MuiThemeProvider>
         );
     }
 }
