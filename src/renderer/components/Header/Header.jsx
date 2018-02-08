@@ -1,21 +1,38 @@
 import React from 'react'
-import { MuiThemeProvider } from 'material-ui'
-import { FlatButton, Toolbar } from 'material-ui'
+import MenuItem from 'material-ui/MenuItem'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import AppBar from 'material-ui/AppBar'
+import Drawer from 'material-ui/Drawer'
 
 export class Header extends React.Component {
-    render() {
-        const ToolbarButtons = () => (
-            <span>
-                <FlatButton label='Home'/>
-                <FlatButton label='News'/>
-                <FlatButton label='Contact'/>
-                <FlatButton label='About'/>
-            </span>
-        );
+    constructor(props) {
+        super(props);
+        this.state = {open: false};
+        this.handleToggle = this.handleToggle.bind(this);
+      }
+    
+    handleToggle() {
+        this.setState({open: !this.state.open});
+    }
 
+    render() {
         return (
             <MuiThemeProvider>
-                <Toolbar children={<ToolbarButtons />} noGutter={false}/>
+                <div>
+                    <AppBar
+                     title="Main bar"
+                     onLeftIconButtonClick={this.handleToggle}
+                    />
+                    <Drawer
+                     open={this.state.open}
+                     docked={false}
+                     onRequestChange={(open) => this.setState({open})}
+                     >
+                        <MenuItem>Home</MenuItem>
+                        <MenuItem>About</MenuItem>
+                        <MenuItem>Contact us</MenuItem>
+                    </Drawer>
+                </div>
             </MuiThemeProvider>
         );
     }
