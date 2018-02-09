@@ -9,6 +9,7 @@ const App = () => (
         <Header />
         <Welcome compiler="Javascript" framework="React" />
     </div>
+
 );
 
 ReactDOM.render(

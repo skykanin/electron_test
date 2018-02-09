@@ -1,16 +1,24 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import AppBar from 'material-ui/AppBar'
 
 export class Header extends React.Component {
+
+    constructor(props) {
+        super(props);
+    }
+
+    menuClick() {
+        console.log("Has been clicked");
+    }
+
     render() {
         const navBarElements = ['Home', 'News', 'Contact', 'About'];
         return (
-            <ul className='header'>
-                <li><a>{navBarElements[0]}</a></li>
-                <li><a>{navBarElements[1]}</a></li>
-                <li><a>{navBarElements[2]}</a></li>
-                <li><a>{navBarElements[3]}</a></li>
-            </ul>
+            <MuiThemeProvider>
+                <AppBar title="App Bar" onLeftIconButtonClick={this.menuClick} />
+            </MuiThemeProvider>
         );
     }
 }
