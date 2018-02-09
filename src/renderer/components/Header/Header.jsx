@@ -1,23 +1,38 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import MenuItem from 'material-ui/MenuItem'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import AppBar from 'material-ui/AppBar'
+import Drawer from 'material-ui/Drawer'
 
 export class Header extends React.Component {
-
     constructor(props) {
         super(props);
-    }
-
-    menuClick() {
-        console.log("Has been clicked");
+        this.state = {open: false};
+        this.handleToggle = this.handleToggle.bind(this);
+      }
+    
+    handleToggle() {
+        this.setState({open: !this.state.open});
     }
 
     render() {
-        const navBarElements = ['Home', 'News', 'Contact', 'About'];
         return (
             <MuiThemeProvider>
-                <AppBar title="App Bar" onLeftIconButtonClick={this.menuClick} />
+                <div>
+                    <AppBar
+                     title="Main bar"
+                     onLeftIconButtonClick={this.handleToggle}
+                    />
+                    <Drawer
+                     open={this.state.open}
+                     docked={false}
+                     onRequestChange={(open) => this.setState({open})}
+                     >
+                        <MenuItem>Home</MenuItem>
+                        <MenuItem>About</MenuItem>
+                        <MenuItem>Contact us</MenuItem>
+                    </Drawer>
+                </div>
             </MuiThemeProvider>
         );
     }
