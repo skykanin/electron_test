@@ -1,10 +1,13 @@
 {
   "name": "frontend_test",
+  "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>src/setupTests.js"
+  },
   "version": "1.0.0",
   "description": "Testing frontend with webpack",
   "main": "src/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "electron ."
   },
   "author": "Skykanin",
@@ -15,11 +18,17 @@
     "react-dom": "^16.2.0"
   },
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-jest": "^22.2.2",
     "babel-preset-es2018": "^1.0.0",
     "babel-preset-react": "^6.24.1",
     "electron-devtools-installer": "^2.2.3",
     "electron-prebuilt-compile": "^1.7.11",
-    "typescript": "^2.6.2",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "jest": "^22.2.2",
+    "regenerator-runtime": "^0.11.1",
+    "typescript": "^2.7.1",
     "webpack": "^3.10.0"
   }
 }

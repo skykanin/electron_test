@@ -4,7 +4,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import AppBar from 'material-ui/AppBar'
 import Drawer from 'material-ui/Drawer'
 
-export class Header extends React.Component {
+export default class Header extends React.Component {
     constructor(props) {
         super(props);
         this.state = {open: false};
